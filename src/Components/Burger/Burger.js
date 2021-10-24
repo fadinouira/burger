@@ -5,7 +5,7 @@ import './Burger.css';
 const Burger = (props) => {
     let add = "" ;
 
-    add = "Please add your ingredients" ;
+    add = "Please add your ingredients MiMi" ;
 
     const ingredients = Object.keys(props.ingredients).map(key => {
         return [...Array(props.ingredients[key])].map((_,i) => {
