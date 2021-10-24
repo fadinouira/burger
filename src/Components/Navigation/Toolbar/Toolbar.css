@@ -1,0 +1,26 @@
+.Toolbar {
+    height: 56px;
+    width: 100%;
+    position: fix;
+    top: 0;
+    left: 0;
+    background-color: #330b35;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 100 !important;
+    color: rgb(250, 215, 250);
+}
+
+.Toolbar nav {
+    height: 100%;
+    display: block;
+}
+
+@media (max-width : 500px) {
+    .Toolbar {
+        display:none ;
+    }
+}
