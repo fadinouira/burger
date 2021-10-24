@@ -55,10 +55,10 @@ export const onGetOrders = (token) => {
     }
 }
 
-export const onPurchase = (order)=> {
+export const onPurchase = (order,token)=> {
     return dispatch => {
         dispatch(startLoading());
-        BS.post('/orders.json',order)
+        BS.post('/orders.json?auth='+token,order)
         .then((res)=>{
             dispatch(onSucess(res.data));
         })

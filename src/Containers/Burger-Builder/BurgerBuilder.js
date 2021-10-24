@@ -46,7 +46,7 @@ const BurgerBuilder = (props) => {
             price : props.price,
             ingredients : {...props.ings}
         }
-        props.onAddBurger(order);
+        props.onAddBurger(order,props.token);
     }
 
     const disabledInfo = {
@@ -106,7 +106,8 @@ const mapStateToProps = state => {
         ings : state.burgerBuilder.ingredients,
         price : state.burgerBuilder.price,
         error : state.burgerBuilder.error,
-        loading : state.order.loading
+        loading : state.order.loading,
+        token : state.auth.token
     };
 }
 
@@ -115,7 +116,7 @@ const mapDispatchToProps = dispatch => {
         onIngredientAdded : (ingName) => dispatch(service.addIngredient(ingName)),
         onIngredientRemoved : (ingName) => dispatch(service.removeIngredient(ingName)),
         onInit : () => dispatch(service.initIngredients()),
-        onAddBurger : (order)=>dispatch(service.onPurchase(order))
+        onAddBurger : (order,token)=>dispatch(service.onPurchase(order,token))
     }
 }
 
